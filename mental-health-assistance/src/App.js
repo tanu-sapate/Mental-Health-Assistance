@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Homepage from './components/Homepage';
 import ForumPage from './components/ForumPage';
 import CreateForum from './components/CreateForum';
+import ChatPage from './components/ChatPage'; // Import ChatPage
 import Footer from './components/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -18,6 +19,7 @@ const App = () => {
           <Route path="/" element={<Homepage />} />
           <Route path="/forums" element={<ForumPage />} />
           <Route path="/create-forum" element={<CreateForum />} />
+          <Route path="/chat/:forumId" element={<ChatPage />} /> {/* Add ChatPage */}
         </Routes>
         <Footer />
       </div>
