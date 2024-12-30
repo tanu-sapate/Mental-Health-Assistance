@@ -7,6 +7,7 @@ import CreateForum from './components/CreateForum';
 import ChatPage from './components/ChatPage'; // Import ChatPage
 import Footer from './components/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Resources from './components/Resources';
 
 const App = () => {
   const userType = 'user'; // Change this to 'therapist' for therapist view
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="/forums" element={<ForumPage />} />
           <Route path="/create-forum" element={<CreateForum />} />
           <Route path="/chat/:forumId" element={<ChatPage />} /> {/* Add ChatPage */}
+          <Route path="/resources" element={<Resources />} />
         </Routes>
         <Footer />
       </div>

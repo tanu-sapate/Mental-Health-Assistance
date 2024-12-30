@@ -6,7 +6,7 @@ const Navbar = ({ userType }) => {
   const navItems = userType === 'user' ? [
     { name: 'Homepage', link: '/' },
     { name: 'Community Forums', link: '/forums' },
-    { name: 'Resources', link: '#' },
+    { name: 'Resources', link: '/resources' },
     { name: 'Therapists', link: '#' },
     { name: 'Mood Tracker', link: '#' }
   ] : [
