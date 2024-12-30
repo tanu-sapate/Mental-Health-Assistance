@@ -25,7 +25,7 @@ const Resources = () => {
                 <div className="row">
                     <div className="col-md-4">
                         <div className="card">
-                            <iframe width="100%" height="200"  src="https://youtu.be/McCDfP5M878" title="How To Relieve Anxiety In One Minute" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                            <iframe width="100%" height="200"  src="https://www.youtube.com/embed/example1" title="How To Relieve Anxiety In One Minute" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                             <div className="card-body">
                                 <h5 className="card-title">How To Relieve Anxiety In One Minute</h5>
                                 <p className="card-text">Having some terrible panic attacks the past couple of weeks over something completely irrational and stupid.
@@ -36,7 +36,7 @@ const Resources = () => {
                     </div>
                     <div className="col-md-4">
                         <div className="card">
-                            <iframe width="100%" height="200"  src="https://youtu.be/TEwoWxLwCfA" title="How To Deal With Depression?" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                            <iframe width="100%" height="200"  src="https://www.youtube.com/embed/example1" title="How To Deal With Depression?" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                             <div className="card-body">
                                 <h5 className="card-title">How To Deal With Depression?</h5>
                                 <p className="card-text">A guided tips session to help you relax.Mindfulness can help you stay grounded and reduce overthinking.</p>
@@ -45,7 +45,7 @@ const Resources = () => {
                     </div>
                     <div className="col-md-4">
                         <div className="card">
-                            <iframe width="100%" height="200" src="https://www.youtube.com/watch?v=PBaFURjVrm0" title="How to hack your brain for better focus" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                            <iframe width="100%" height="200" src="https://www.youtube.com/embed/example1" title="How to hack your brain for better focus" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                             <div className="card-body">
                                 <h5 className="card-title">How to hack your brain for better focus</h5>
                                 <p className="card-text">The modern world constantly fragments our attention. In this funny, insightful talk that how to hack the brain's Default</p>
@@ -60,7 +60,7 @@ const Resources = () => {
                 <div className="row">
                     <div className="col-md-4">
                         <div className="card">
-                            <iframe width="100%" height="200" src="https://youtu.be/0SqQkvUV7Vo" title="A 10 minute Guided Meditation for your Overactive Mind" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                            <iframe width="100%" height="200" src="https://www.youtube.com/embed/example1" title="A 10 minute Guided Meditation for your Overactive Mind" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                             <div className="card-body">
                                 <h5 className="card-title">A 10 minute Guided Meditation for your Overactive Mind</h5>
                                 <p className="card-text">Listening to this 10-minute guided meditation can be a transformative experience for anyone struggling with an overactive mind.  </p>
@@ -69,7 +69,7 @@ const Resources = () => {
                     </div>
                     <div className="col-md-4">
                         <div className="card">
-                            <iframe width="100%" height="200" overflow="hidden" src="https://youtu.be/tEqVyJNOroI" title="4 Small Habits To Improve Self Esteem" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                            <iframe width="100%" height="200" overflow="hidden" src="https://www.youtube.com/embed/example1" title="4 Small Habits To Improve Self Esteem" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                             <div className="card-body">
                                 <h5 className="card-title">4 Small Habits To Improve Self Esteem</h5>
                                 <p className="card-text">Self esteem is defined as the degree to which qualities and characteristics inside one’s self-concept are perceived to be positive. In short, it is your opinion of yourself.</p>
@@ -78,7 +78,7 @@ const Resources = () => {
                     </div>
                     <div className="col-md-4">
                         <div className="card">
-                            <iframe width="100%" height="200" src="https://youtu.be/lHVYgnlukTw" title="5 Ways to Deal with Anxiety" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                            <iframe width="100%" height="200" src="https://www.youtube.com/embed/example1" title="5 Ways to Deal with Anxiety" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                             <div className="card-body">
                                 <h5 className="card-title">5 Ways to Deal with Anxiety</h5>
                                 <p className="card-text">Dr. Hansaji Yogendra explains how to deal with anxiety in 5 simple ways. Due to COVID-19, we have faced a lot of mental health issues in the society. This video will help you to deal with these issues.</p>
