@@ -16,12 +16,12 @@ const Resources = () => {
     return (
         <main className="container mt-5">
             <div className="text-center">
-                <h1>Welcome to Mental Health Support Platform</h1>
-                <p>Your mental hesalth matters</p>
+                <h1>Resources</h1>
+                <p> <i>"Here, you'll find a thoughtfully curated collection of videos, articles, and podcasts designed to uplift your spirit, nurture mindfulness, and strengthen your inner peace. Whether you're seeking a moment of calm, a dose of positivity, or tools for personal growth, these resources are here to support and inspire you on your journey to well-being. Dive in and discover your sanctuary of calm and empowerment."</i></p>
                
             </div>
             <section className="mt-5 section-videos">
-                <h2>Self Help Videos</h2>
+                <h1 className="text-center mt-4 mb-4">Self Help Videos</h1>
                 <div className="row">
                     <div className="col-md-4">
                         <div className="card">
@@ -53,10 +53,7 @@ const Resources = () => {
                         </div>
                     </div>
                 </div>
-            </section>
-          
-
-            <section className="mt-5 section-videos">
+  
                 <div className="row">
                     <div className="col-md-4">
                         <div className="card">
@@ -91,7 +88,7 @@ const Resources = () => {
 
 
             <section className="mt-5 section-articles">
-                <h2>Articles</h2>
+                <h1 className="text-center mt-4 mb-4">Articles</h1>
                 <div className="row">
                     <div className="col-md-4">
                         <div className="card">
@@ -173,12 +170,12 @@ const Resources = () => {
                 </div>
             </section>
             <section className="mt-5 section-podcasts">
-                <h2>Podcasts</h2>
+                <h1 className="text-center mt-4 mb-4">Podcasts</h1>
                 <div className="row">
                     <div className="col-md-4">
-                        <div className="card">
+                        <div className="card m-3">
                             <div className="card-body">
-                                <h5 className="card-title">Mental Health Matters</h5>
+                                <h5 className="card-title text-center">Mental Health Matters</h5>
                                 <p className="card-text">A podcast discussing various mental health topics and tips.</p>
                                 <audio controls>
                                     <source src="https://example.com/podcast1.mp3" type="audio/mpeg" />
@@ -193,7 +190,7 @@ const Resources = () => {
                     <div className="col-md-4">
                         <div className="card">
                             <div className="card-body">
-                                <h5 className="card-title">Mindful Living</h5>
+                                <h5 className="card-title text-center">Mindful Living</h5>
                                 <p className="card-text">Explore mindfulness practices and how they can improve your life.</p>
                                 <audio controls>
                                     <source src="https://example.com/podcast2.mp3" type="audio/mpeg" />
@@ -208,7 +205,7 @@ const Resources = () => {
                     <div className="col-md-4">
                         <div className="card">
                             <div className="card-body">
-                                <h5 className="card-title">Resilience and Growth</h5>
+                                <h5 className="card-title text-center">Resilience and Growth</h5>
                                 <p className="card-text">Stories and strategies for building resilience and personal growth.</p>
                                 <audio controls>
                                     <source src="https://example.com/podcast3.mp3" type="audio/mpeg" />
@@ -225,7 +222,7 @@ const Resources = () => {
                     <div className="col-md-4">
                         <div className="card">
                             <div className="card-body">
-                                <h5 className="card-title">Mental Health Matters</h5>
+                                <h5 className="card-title text-center">Mental Health Matters</h5>
                                 <p className="card-text">A podcast discussing various mental health topics and tips.</p>
                                 <audio controls>
                                     <source src="https://example.com/podcast1.mp3" type="audio/mpeg" />
@@ -240,7 +237,7 @@ const Resources = () => {
                     <div className="col-md-4">
                         <div className="card">
                             <div className="card-body">
-                                <h5 className="card-title">Mindful Living</h5>
+                                <h5 className="card-title text-center">Mindful Living</h5>
                                 <p className="card-text">Explore mindfulness practices and how they can improve your life.</p>
                                 <audio controls>
                                     <source src="https://example.com/podcast2.mp3" type="audio/mpeg" />
@@ -255,7 +252,7 @@ const Resources = () => {
                     <div className="col-md-4">
                         <div className="card">
                             <div className="card-body">
-                                <h5 className="card-title">Resilience and Growth</h5>
+                                <h5 className="card-title text-center">Resilience and Growth</h5>
                                 <p className="card-text">Stories and strategies for building resilience and personal growth.</p>
                                 <audio controls>
                                     <source src="https://example.com/podcast3.mp3" type="audio/mpeg" />
