@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+
 import { Container, Form, Button, Card } from 'react-bootstrap';
+
 
 const UserProfile = () => {
   const [profile, setProfile] = useState({
     name: 'John Doe',
     email: 'john@example.com',
+
     phone: '123-456-7890',
     bio: 'Passionate about mental health and wellness.',
     gender: 'Male',
@@ -15,12 +18,14 @@ const UserProfile = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [preview, setPreview] = useState(profile.profilePicture);
 
+
   const handleChange = (e) => {
     setProfile({
       ...profile,
       [e.target.name]: e.target.value
     });
   };
+
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -30,12 +35,14 @@ const UserProfile = () => {
     }
   };
 
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsEditing(false);
   };
 
   return (
+
     <Container className="user-profile mt-5 d-flex justify-content-center">
       <Card className="shadow-lg p-4" style={{ width: '60%', borderRadius: '15px' }}>
         <Card.Body>
@@ -146,6 +153,7 @@ const UserProfile = () => {
           )}
         </Card.Body>
       </Card>
+
     </Container>
   );
 };

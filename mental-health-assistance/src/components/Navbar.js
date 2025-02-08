@@ -13,13 +13,17 @@ const CustomNavbar = ({ userType }) => {
   };
 
   const navItems = userType === 'user' ? [
+
     { name: 'Homepage', link: '/homepage' },
+
     { name: 'Community Forums', link: '/forums' },
     { name: 'Resources', link: '/resources' },
     { name: 'Therapists', link: '/therapists' },
     { name: 'Mood Tracker', link: '/mood-tracker' }
   ] : [
+
     { name: 'Homepage', link: '/therapist/homepage' },
+
     { name: 'Community Forums', link: '/forums' },
     { name: 'Patients', link: '/patients' },
     { name: 'Reports', link: '/reports' },
@@ -27,10 +31,12 @@ const CustomNavbar = ({ userType }) => {
   ];
 
   return (
+
     <Navbar expand="lg" className="fixed-top shadow-sm p-3 bg-white">
       <Container>
         <Navbar.Brand as={Link} to="/" className="fw-bold text-primary">MindCare</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbar-nav" />
+
 
         <Navbar.Collapse id="navbar-nav">
           <Nav className="ms-auto">

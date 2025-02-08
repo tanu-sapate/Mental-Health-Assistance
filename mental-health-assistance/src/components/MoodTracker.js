@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
+
 import { Container, Card, Button, ProgressBar, Form } from 'react-bootstrap';
 import MoodGraphs from './MoodGraphs';
+
 import questions from '../data/moodQuestions';
 
 const MoodTracker = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState(Array(questions.length).fill(0));
   const [showGraphs, setShowGraphs] = useState(false);
+
   const [moodNote, setMoodNote] = useState('');
+
 
   const handleAnswer = (value) => {
     const newAnswers = [...answers];
@@ -20,6 +24,7 @@ const MoodTracker = () => {
       setShowGraphs(true);
     }
   };
+
 
   const handleSaveNote = () => {
     if (!moodNote.trim()) {
@@ -43,11 +48,13 @@ const MoodTracker = () => {
     setMoodNote('');
   };
 
+
   if (showGraphs) {
     return <MoodGraphs answers={answers} />;
   }
 
   return (
+
     <Container className="mood-tracker mt-5">
       <Card className="text-center shadow-lg p-4" style={{ borderRadius: '15px' }}>
         <Card.Body>
@@ -59,11 +66,14 @@ const MoodTracker = () => {
           />
           <h5 className="mb-4">{questions[currentQuestion]}</h5>
           <div className="rating-buttons d-flex justify-content-center">
+
             {[1, 2, 3, 4, 5].map((value) => (
               <Button 
                 key={value}
                 variant="outline-primary" 
+
                 className="mx-2 px-3 py-2"
+
                 onClick={() => handleAnswer(value)}
               >
                 {value}
@@ -72,6 +82,7 @@ const MoodTracker = () => {
           </div>
         </Card.Body>
       </Card>
+
 
       {/* Mood Journal Section */}
       <Card className="mt-4 shadow-sm p-4" style={{ borderRadius: '15px', backgroundColor: '#f8f9fa' }}>
@@ -99,6 +110,7 @@ const MoodTracker = () => {
         </Card.Body>
       </Card>
     </Container>
+
   );
 };
 

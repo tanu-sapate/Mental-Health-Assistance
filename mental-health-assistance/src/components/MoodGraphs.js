@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+
 import { useNavigate } from 'react-router-dom';
 import labels from '../data/labels';
 import { Container, Card, Row, Col, Button } from 'react-bootstrap';
@@ -7,11 +8,14 @@ import { Line } from 'react-chartjs-2';
 import Navbar from './Navbar';
 import { Link } from 'react-router-dom';
 
+
 // Register required components
 Chart.register(CategoryScale, LinearScale, LineElement, PointElement);
 
 const MoodGraphs = ({ answers }) => {
+
   const navigate = useNavigate(); // Hook for navigation
+
   const chartRef1 = useRef(null);
   const chartRef2 = useRef(null);
 
@@ -27,10 +31,12 @@ const MoodGraphs = ({ answers }) => {
     };
   }, []);
 
+
   // Generate sample data for past 7 days
   const past7Days = Array.from({ length: 7 }, (_, i) => 
     Math.floor(Math.random() * 5) + 1
   );
+
 
   const data = {
     labels: ['Day 7', 'Day 6', 'Day 5', 'Day 4', 'Day 3', 'Day 2', 'Yesterday', 'Today'],
@@ -46,6 +52,7 @@ const MoodGraphs = ({ answers }) => {
 
   return (
     <>
+
       <Navbar />
       <Container className="mood-graphs mt-5">
         <h2 className="text-center mb-4">Your Mood Analysis</h2>
@@ -104,6 +111,7 @@ const MoodGraphs = ({ answers }) => {
 
     
       </Container>
+
     </>
   );
 };

@@ -30,7 +30,9 @@ const Login = () => {
         navigate('/homepage');
       } else if (email === tempCredentials.therapist.email && password === tempCredentials.therapist.password) {
         localStorage.setItem('userType', 'therapist');
+
         navigate('/therapist/homepage');
+
       } else {
         throw new Error('Invalid credentials');
       }

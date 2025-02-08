@@ -1,6 +1,8 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+
 import { Link } from 'react-router-dom';
+
 import { FaEnvelope, FaPhone, FaMapMarker } from 'react-icons/fa';
 import './Footer.css';
 
@@ -14,6 +16,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <Container>
+
         <Row className="text-center text-md-start align-items-center">
           {/* About Section */}
           <Col md={4} className="mb-3">
@@ -57,6 +60,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="text-center mt-3 small-text">
+
           <p className="mb-0">
             &copy; {new Date().getFullYear()} MindCare. All rights reserved.
           </p>

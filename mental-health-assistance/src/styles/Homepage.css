@@ -57,10 +57,9 @@ body {
   }
   
   .message-box {
-    
-    justify-content: space-between;
-    align-items: center;
-  }
+
+    display: flex;
+
   
   /* Resource Section */
  

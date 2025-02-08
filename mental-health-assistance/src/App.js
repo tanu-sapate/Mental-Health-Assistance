@@ -1,3 +1,4 @@
+
 import React, { useMemo, Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -56,12 +57,14 @@ const AppContent = ({ userType }) => {
   );
 };
 
+
 const App = () => {
   const userType = useMemo(() => localStorage.getItem('userType') || 'user', []);
 
   return (
     <Router>
       <AppContent userType={userType} />
+
     </Router>
   );
 };
