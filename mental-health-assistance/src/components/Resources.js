@@ -1,17 +1,6 @@
 import React, { useState } from 'react';
-
-// const ArticlesSection = () => {
-//     const [showFullArticle, setShowFullArticle] = useState(false);
-// };
-//     const toggleArticleView = () => {
-//         setShowFullArticle(!showFullArticle); // Correct function is defined here
-//     };
-
+import RazorpayButton from './RazorpayButton';
 const Resources = () => {
-    // const [showFullArticle, setShowFullArticle] = useState(false);
-    // const resourcesPage = () => {
-    //     navigate('/resources'); // Navigate to Resources page
-    //   };
 
     return (
         <main className="container mt-5">
@@ -61,6 +50,9 @@ const Resources = () => {
                             <div className="card-body">
                                 <h5 className="card-title">A 10 minute Guided Meditation for your Overactive Mind</h5>
                                 <p className="card-text">Listening to this 10-minute guided meditation can be a transformative experience for anyone struggling with an overactive mind.  </p>
+                                <div className="d-flex justify-content-end mr-3">
+                                <RazorpayButton/>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -70,6 +62,9 @@ const Resources = () => {
                             <div className="card-body">
                                 <h5 className="card-title">4 Small Habits To Improve Self Esteem</h5>
                                 <p className="card-text">Self esteem is defined as the degree to which qualities and characteristics inside one’s self-concept are perceived to be positive. In short, it is your opinion of yourself.</p>
+                                <div className="d-flex justify-content-end mr-3">
+                                <RazorpayButton/>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -79,6 +74,11 @@ const Resources = () => {
                             <div className="card-body">
                                 <h5 className="card-title">5 Ways to Deal with Anxiety</h5>
                                 <p className="card-text">Dr. Hansaji Yogendra explains how to deal with anxiety in 5 simple ways. Due to COVID-19, we have faced a lot of mental health issues in the society. This video will help you to deal with these issues.</p>
+                                <div className="d-flex justify-content-end mr-3">
+                                <div className="d-flex justify-content-end mr-3">
+  <RazorpayButton/>
+</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -96,12 +96,11 @@ const Resources = () => {
                                 <h5 className="card-title">Importance of Regular Breaks and Mental Health Days</h5>
                                 <p className="card-text">
                                    
-                                        Encouraging employees to take regular breaks and mental health days is vital for maintaining a sustainable and productive work environment. Overworking and ignoring the need for rest can lead to burnout, decreased creativity, and poor decision-making.
-                                        <a href="https://www.youtube.com/watch?v=PBaFURjVrm0" className="btn btn-info">Read Article</a>
+                                        Encouraging employees to take regular breaks and mental health days is vital for maintaining a sustainable and productive work environment. Overworking and ignoring the need for rest can lead to burnout.
+                                        <br/>
+                                        <a href="https://www.youtube.com/watch?v=PBaFURjVrm0" className="btn btn-info mt-3">Read Article</a>
                                         <br />
                             </p>
-            
-                                {/* <a href="https://youtu.be/TEwoWxLwCfA" className="btn btn-info">Read Article</a> */}
                             </div>
                         </div>
                     </div>
@@ -111,9 +110,9 @@ const Resources = () => {
                     <div className="col-md-4">
                         <div className="card">
                             <div className="card-body">
-                                <h5 className="card-title">brain Eating Habits</h5>
+                                <h5 className="card-title">Brain Eating Habits</h5>
                                 <p className="card-text">Developing healthy eating habits is essential for maintaining overall well-being. A balanced diet provides the necessary nutrients for your body to function optimally, supports mental health, and reduces the risk of chronic diseases.</p>
-                                <a href="https://www.youtube.com/watch?v=PBaFURjVrm0" className="btn btn-info">Read Article</a>
+                                <a href="https://www.youtube.com/watch?v=PBaFURjVrm0" className="btn btn-info mt-3">Read Article</a>
                             </div>
                         </div>
                     </div>
@@ -122,7 +121,7 @@ const Resources = () => {
                             <div className="card-body">
                                 <h5 className="card-title">Exercise and Mental Health</h5>
                                 <p className="card-text">Physical activity has a profound impact on mental health. Regular exercise releases endorphins, which are natural mood lifters. It also helps reduce stress, anxiety, and symptoms of depression, while improving self-esteem and cognitive function.</p>
-                                <a href="https://example.com/article3" className="btn btn-info">Read Article</a>
+                                <a href="https://example.com/article3" className="btn btn-info mt-3">Read Article</a>
                             </div>
                         </div>
                     </div>
@@ -135,12 +134,15 @@ const Resources = () => {
                                 <h5 className="card-title">Importance of Regular Breaks and Mental Health Days</h5>
                                 <p className="card-text">
                                    
-                                        Encouraging employees to take regular breaks and mental health days is vital for maintaining a sustainable and productive work environment. Overworking and ignoring the need for rest can lead to burnout, decreased creativity, and poor decision-making.
-                                        <a href="https://www.youtube.com/watch?v=PBaFURjVrm0" className="btn btn-info">Read Article</a>
+                                        Encouraging employees to take regular breaks and mental health days is vital for maintaining a sustainable and productive work environment. 
+                                        <div class="d-flex w-100 justify-content-between mt-3">
+                                        <a href="https://www.youtube.com/watch?v=PBaFURjVrm0" className="btn btn-info disabled">Read Article</a>
+                                        <div className="d-flex mr-3">
+                                        <RazorpayButton/>
+                                </div>
+                                        </div>
                                         <br />
                             </p>
-            
-                                {/* <a href="https://youtu.be/TEwoWxLwCfA" className="btn btn-info">Read Article</a> */}
                             </div>
                         </div>
                     </div>
@@ -150,9 +152,14 @@ const Resources = () => {
                     <div className="col-md-4">
                         <div className="card">
                             <div className="card-body">
-                                <h5 className="card-title">brain Eating Habits</h5>
+                                <h5 className="card-title">Brain Eating Habits</h5>
                                 <p className="card-text">Developing healthy eating habits is essential for maintaining overall well-being. A balanced diet provides the necessary nutrients for your body to function optimally, supports mental health, and reduces the risk of chronic diseases.</p>
-                                <a href="https://www.youtube.com/watch?v=PBaFURjVrm0" className="btn btn-info">Read Article</a>
+                                <div class="d-flex w-100 justify-content-between mt-4">
+                                        <a href="https://www.youtube.com/watch?v=PBaFURjVrm0" className="btn btn-info disabled">Read Article</a>
+                                        <div className="d-flex mr-3">
+                                        <RazorpayButton/>
+                                </div>
+                                        </div>
                             </div>
                         </div>
                     </div>
@@ -163,7 +170,12 @@ const Resources = () => {
                             <div className="card-body">
                                 <h5 className="card-title">Exercise and Mental Health</h5>
                                 <p className="card-text">Physical activity has a profound impact on mental health. Regular exercise releases endorphins, which are natural mood lifters. It also helps reduce stress, anxiety, and symptoms of depression, while improving self-esteem and cognitive function.</p>
-                                <a href="https://example.com/article3" className="btn btn-info">Read Article</a>
+                                <div class="d-flex w-100 justify-content-between">
+                                        <a href="https://www.youtube.com/watch?v=PBaFURjVrm0" className="btn btn-info disabled">Read Article</a>
+                                        <div className="d-flex mr-3">
+                                        <RazorpayButton/>
+                                </div>
+                                        </div>
                             </div>
                         </div>
                     </div>
@@ -228,8 +240,9 @@ const Resources = () => {
                                     <source src="https://example.com/podcast1.mp3" type="audio/mpeg" />
                                     Your browser does not support the audio element.
                                 </audio>
-                                <div className="d-flex justify-content-center">
-                                <a href="https://example.com/podcast3" className="btn btn-primary mt-2">Listen to Podcast</a>
+                                <div className="d-flex justify-content-between">
+                                <a href="https://example.com/podcast3" className="btn btn-primary mt-2 disabled">Listen to Podcast</a>
+                                <RazorpayButton/>
                                 </div>
                             </div>
                         </div>
@@ -243,8 +256,9 @@ const Resources = () => {
                                     <source src="https://example.com/podcast2.mp3" type="audio/mpeg" />
                                     Your browser does not support the audio element.
                                 </audio>
-                                <div className="d-flex justify-content-center">
-                                <a href="https://example.com/podcast3" className="btn btn-primary mt-2">Listen to Podcast</a>
+                                <div className="d-flex justify-content-between">
+                                <a href="https://example.com/podcast3" className="btn btn-primary mt-2 disabled">Listen to Podcast</a>
+                                <RazorpayButton/>
                                 </div>
                             </div>
                         </div>
@@ -258,125 +272,16 @@ const Resources = () => {
                                     <source src="https://example.com/podcast3.mp3" type="audio/mpeg" />
                                     Your browser does not support the audio element.
                                 </audio>
-                                <div className="d-flex justify-content-center">
-                                <a href="https://example.com/podcast3" className="btn btn-primary mt-2">Listen to Podcast</a>
+                                <div className="d-flex justify-content-between">
+                                <a href="https://example.com/podcast3" className="btn btn-primary mt-2 disabled">Listen to Podcast</a>
+                                <RazorpayButton/>
                                 </div>
                             </div>
                         </div>
                     </div>
                     </div>
             </section>
-            {/* <section className="mt-5 section-therapists">
-                <h2>Our Therapists</h2>
-                <div id="therapistCarousel" className="carousel slide" data-ride="carousel">
-                    <div className="carousel-inner">
-                        <div className="carousel-item active">
-                            <div className="row">
-                                <div className="col-md-4">
-                                    <div className="card">
-                                        <img src="https://via.placeholder.com/150" className="card-img-top" alt="Dr. Jane Doe" />
-                                        <div className="card-body">
-                                            <h5 className="card-title">Dr. Jane Doe</h5>
-                                            <p className="card-text">Specialization: Cognitive Behavioral Therapy</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-md-4">
-                                    <div className="card">
-                                        <img src="https://via.placeholder.com/150" className="card-img-top" alt="Dr. John Smith" />
-                                        <div className="card-body">
-                                            <h5 className="card-title">Dr. John Smith</h5>
-                                            <p className="card-text">Specialization: Psychodynamic Therapy</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-md-4">
-                                    <div className="card">
-                                        <img src="https://via.placeholder.com/150" className="card-img-top" alt="Dr. Emily Johnson" />
-                                        <div className="card-body">
-                                            <h5 className="card-title">Dr. John Smith</h5>
-                                            <p className="card-text">Specialization: Psychodynamic Therapy</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="carousel-item ">
-                            <div className="row">
-                                <div className="col-md-4">
-                                    <div className="card">
-                                        <img src="https://via.placeholder.com/150" className="card-img-top" alt="Dr. Jane Doe" />
-                                        <div className="card-body">
-                                            <h5 className="card-title">Dr. Jane Doe</h5>
-                                            <p className="card-text">Specialization: Cognitive Behavioral Therapy</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-md-4">
-                                    <div className="card">
-                                        <img src="https://via.placeholder.com/150" className="card-img-top" alt="Dr. John Smith" />
-                                        <div className="card-body">
-                                            <h5 className="card-title">Dr. John Smith</h5>
-                                            <p className="card-text">Specialization: Psychodynamic Therapy</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-md-4">
-                                    <div className="card">
-                                        <img src="https://via.placeholder.com/150" className="card-img-top" alt="Dr. Emily Johnson" />
-                                        <div className="card-body">
-                                            <h5 className="card-title">Dr. John Smith</h5>
-                                            <p className="card-text">Specialization: Psychodynamic Therapy</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="carousel-item ">
-                            <div className="row">
-                                <div className="col-md-4">
-                                    <div className="card">
-                                        <img src="https://via.placeholder.com/150" className="card-img-top" alt="Dr. Jane Doe" />
-                                        <div className="card-body">
-                                            <h5 className="card-title">Dr. Jane Doe</h5>
-                                            <p className="card-text">Specialization: Cognitive Behavioral Therapy</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-md-4">
-                                    <div className="card">
-                                        <img src="https://via.placeholder.com/150" className="card-img-top" alt="Dr. John Smith" />
-                                        <div className="card-body">
-                                            <h5 className="card-title">Dr. John Smith</h5>
-                                            <p className="card-text">Specialization: Psychodynamic Therapy</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-md-4">
-                                    <div className="card">
-                                        <img src="https://via.placeholder.com/150" className="card-img-top" alt="Dr. Emily Johnson" />
-                                        <div className="card-body">
-                                            <h5 className="card-title">Dr. John Smith</h5>
-                                            <p className="card-text">Specialization: Psychodynamic Therapy</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <a className="carousel-control-prev" href="#therapistCarousel" role="button" data-slide="prev">
-                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span className="sr-only">Previous</span> </a>
-            <a className="carousel-control-next" href="#therapistCarousel" role="button" data-slide="next">
-                <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                <span className="sr-only">Next</span> </a>
-            </div>
-            
-        
-          
-        
-        
-      </section > */}
+           
     </main >);
 };  
 

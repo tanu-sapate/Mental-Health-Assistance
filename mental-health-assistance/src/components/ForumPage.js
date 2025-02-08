@@ -1,13 +1,20 @@
 import React, { useState } from 'react';
 import { FaThumbsUp } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import { Container, Button, Card } from 'react-bootstrap';
+import '../components/ForumPage.css';
 
 const ForumPage = () => {
   const navigate = useNavigate();
+  const { forumId } = useParams(); // Get the forum ID from the URL
   const [forums, setForums] = useState([
     { id: 1, title: 'Mental Health Tips', description: 'Share your daily tips for mental health improvement!', likes: 12 },
     { id: 2, title: 'Anxiety Support', description: 'Discuss and find support for anxiety management.', likes: 8 },
     { id: 3, title: 'Motivational Stories', description: 'Share and read inspiring stories!', likes: 15 },
+    { id: 4, title: 'Insecurities', description: 'Talk about personal struggles and overcome insecurities.', likes: 10 },
+    { id: 5, title: 'Self-Help', description: 'Discuss self-help books, courses, and strategies.', likes: 7 },
+    { id: 6, title: 'Meditation', description: 'Share your meditation techniques and experiences.', likes: 11 },
+    { id: 7, title: 'Self-Confidence', description: 'Boost your self-esteem with shared experiences.', likes: 9 },
   ]);
 
   const handleLike = (id) => {
@@ -25,38 +32,32 @@ const ForumPage = () => {
   };
 
   return (
-    <div className="forum-page container mt-4">
+    <Container className="forum-page mt-4">
       <h2 className="text-center mb-4">Community Forums</h2>
       <div className="text-right mb-3">
-        <button className="btn btn-primary" onClick={handleCreateForum}>
+        <Button variant="primary" onClick={handleCreateForum}>
           Create New Forum
-        </button>
+        </Button>
       </div>
       <div className="forum-list">
         {forums.map(forum => (
-          <div key={forum.id} className="card mb-3">
-            <div className="card-body">
-              <h5 className="card-title">{forum.title}</h5>
-              <p className="card-text">{forum.description}</p>
+          <Card key={forum.id} className="mb-3">
+            <Card.Body>
+              <Card.Title>{forum.title}</Card.Title>
+              <Card.Text>{forum.description}</Card.Text>
               <div className="d-flex justify-content-between align-items-center">
-                <button 
-                  className="btn btn-light" 
-                  onClick={() => handleLike(forum.id)}
-                >
+                <Button variant="light" onClick={() => handleLike(forum.id)}>
                   <FaThumbsUp /> {forum.likes}
-                </button>
-                <button 
-                  className="btn btn-secondary" 
-                  onClick={() => handleChat(forum.id)}
-                >
+                </Button>
+                <Button variant="secondary" onClick={() => handleChat(forum.id)}>
                   Chat
-                </button>
+                </Button>
               </div>
-            </div>
-          </div>
+            </Card.Body>
+          </Card>
         ))}
       </div>
-    </div>
+    </Container>
   );
 };
 

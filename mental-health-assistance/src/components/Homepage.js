@@ -1,8 +1,16 @@
 import React from 'react';
 import { Container, Row, Col, Card, Button, Carousel } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import '../styles/Homepage.css';
 
 const Homepage = () => {
+
+  const navigate = useNavigate();
+
+  const handleJoinForum = (forumId) => {
+    navigate(`/chat/${forumId}`);
+  };
+
   return (
     <Container fluid>
       {/* Hero Section */}
@@ -38,7 +46,7 @@ const Homepage = () => {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="https://via.placeholder.com/1200x400/2e8b57/ffffff?text=You+Are+Stronger+Than+You+Think"
+              src="https://jidnyasagurukulam.graphy.com/_next/image?url=https%3A%2F%2Fd502jbuhuh9wk.cloudfront.net%2Fcourses%2F66825bf7efd150059f969d77%2Fcover%2F2024-07-01T07%3A46%3A00.975Z.jpg&w=1920&q=75"
               alt="Third slide"
             />
             <Carousel.Caption>
@@ -75,24 +83,31 @@ const Homepage = () => {
       <section className="community-forums py-5 bg-light mt-3">
         <Container>
           <h2 className="text-center">Community Forums</h2>
-          <p className="text-center">
-            Join interactive discussions on topics like insecurities, self-help, and more.
-          </p>
+          <p className="text-center">Join discussions on mental health topics.</p>
           <Row className="justify-content-center">
-            {['Insecurities', 'Self-Help', 'Meditation', 'Self-Confidence'].map((topic, index) => (
-              <Col md={3} key={index} className="forum-box mx-2 my-2">
+            {[
+              { id: 1, title: 'Mental Health Tips', desc: 'Get practical tips and strategies for maintaining mental wellness.' },
+              { id: 2, title: 'Anxiety Support', desc: 'Share your experiences and find support from others dealing with anxiety.' },
+              { id: 3, title: 'Motivational Stories', desc: 'Read and share inspiring stories of resilience and growth.' },
+              { id: 4, title: 'Insecurities', desc: 'Discuss and overcome personal insecurities with a supportive community.' },
+              { id: 5, title: 'Self-Help', desc: 'Explore self-help techniques to improve mental well-being.' },
+              { id: 6, title: 'Meditation', desc: 'Learn about meditation techniques and their benefits for mental health.' },
+              { id: 7, title: 'Self-Confidence', desc: 'Find ways to build self-confidence and self-esteem.' },
+            ].map((forum) => (
+              <Col md={3} key={forum.id} className="forum-box mx-2 my-2">
                 <div className="message-box">
-                  <p>
-                    <strong>{topic}</strong>: Let's talk and support each other!
-                  </p>
-                  <Button variant="outline-primary" size="sm">Join</Button>
+                  <p><strong>{forum.title}</strong></p>
+                  <p className="forum-desc">{forum.desc}</p>
+                  <Button variant="outline-primary" size="sm" onClick={() => handleJoinForum(forum.id)}>
+                    Join
+                  </Button>
                 </div>
               </Col>
             ))}
           </Row>
+          <h4 className="text-center mt-3"><u><i>To explore more forums, visit the community forums page.</i></u></h4>
         </Container>
       </section>
-
       {/* Resource Section */}
       <section className="resources-section">
         {/* Videos Section */}
@@ -106,7 +121,7 @@ const Homepage = () => {
               <Col md={6}>
                 <iframe
                   width="100%"
-                  height="315"
+                  height="280"
                   src="https://www.youtube.com/embed/dQw4w9WgXcQ"
                   title="Sample Video"
                   frameBorder="0"
@@ -146,27 +161,27 @@ const Homepage = () => {
             <Row className="align-items-center">
               <Col md={6}>
                 <h2>Articles</h2>
-                <p>Read an engaging article on self-confidence.</p>
+                <p>Mental peace refers to the deliberate state of spiritual calm and the potential of stressors such as the burden arising from pretending to perform at an optional level with a positive mind (inner peace). Peace of mind is generally associated with joy, happiness, calmness, prayer, yoga, meditation etc. many spiritual practices refer to this peace as an experience of knowing oneself. </p>
                 <Button variant="outline-primary">Read Article</Button>
               </Col>
               <Col md={6}>
-                <img src="sample-article-image.jpg" alt="Article" className="img-fluid rounded" />
+                <img src="https://media.istockphoto.com/id/1421170573/photo/aspiration-for-change.jpg?s=612x612&w=0&k=20&c=3edLSV2-XIxGB47g4FHLljigkXjYiqwDUyuGpT4lLv0=" height={100} width={400} alt="Article" className="img-fluid rounded ml-5" />
               </Col>
             </Row>
           </Container>
           </div>
           {/* Therapist Carousel */}
-      <section className="section-therapists pt-3">
+      <section className="section-therapists pt-5">
         <div className="container">
           <h2>Our Therapists</h2>
-          <div id="therapistCarousel" className="carousel slide mt-3" data-ride="carousel">
+          <div id="therapistCarousel" className="carousel slide mt-3 pt-3" data-ride="carousel">
             <div className="carousel-inner">
               <div className="carousel-item active">
                 <div className="row">
                   <div className="col-md-3">
                     <div className="card">
                       <img
-                        src="https://via.placeholder.com/150"
+                        src="https://cdn-icons-png.flaticon.com/512/3063/3063015.png"
                         className="card-img-top"
                         alt="Dr. Jane Doe"
                       />
@@ -179,7 +194,7 @@ const Homepage = () => {
                   <div className="col-md-3">
                     <div className="card">
                       <img
-                        src="https://via.placeholder.com/150"
+                        src="https://cdn-icons-png.flaticon.com/512/3063/3063015.png"
                         className="card-img-top"
                         alt="Dr. Jane Doe"
                       />
@@ -192,7 +207,7 @@ const Homepage = () => {
                   <div className="col-md-3">
                     <div className="card">
                       <img
-                        src="https://via.placeholder.com/150"
+                        src="https://cdn-icons-png.flaticon.com/512/3063/3063015.png"
                         className="card-img-top"
                         alt="Dr. John Smith"
                       />
@@ -205,7 +220,7 @@ const Homepage = () => {
                   <div className="col-md-3">
                     <div className="card">
                       <img
-                        src="https://via.placeholder.com/150"
+                        src="https://cdn-icons-png.flaticon.com/512/3063/3063015.png"
                         className="card-img-top"
                         alt="Dr. Emily Johnson"
                       />
@@ -223,7 +238,7 @@ const Homepage = () => {
                   <div className="col-md-3">
                     <div className="card">
                       <img
-                        src="https://via.placeholder.com/150"
+                        src="https://cdn-icons-png.flaticon.com/512/3063/3063015.png"
                         className="card-img-top"
                         alt="Dr. Michael Brown"
                       />
@@ -236,7 +251,7 @@ const Homepage = () => {
                   <div className="col-md-3">
                     <div className="card">
                       <img
-                        src="https://via.placeholder.com/150"
+                        src="https://cdn-icons-png.flaticon.com/512/3063/3063015.png"
                         className="card-img-top"
                         alt="Dr. Sarah Wilson"
                       />
@@ -249,7 +264,7 @@ const Homepage = () => {
                   <div className="col-md-3">
                     <div className="card">
                       <img
-                        src="https://via.placeholder.com/150"
+                        src="https://cdn-icons-png.flaticon.com/512/3063/3063015.png"
                         className="card-img-top"
                         alt="Dr. Sarah Wilson"
                       />
@@ -262,7 +277,7 @@ const Homepage = () => {
                   <div className="col-md-3">
                     <div className="card">
                       <img
-                        src="https://via.placeholder.com/150"
+                        src="https://cdn-icons-png.flaticon.com/512/3063/3063015.png"
                         className="card-img-top"
                         alt="Dr. Robert Lee"
                       />
