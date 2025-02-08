@@ -12,7 +12,9 @@ const RegisterPage = () => {
     if (role === "user") {
       navigate("/Homepage");
     } else {
-      navigate("/TherapistHomepage");
+
+      navigate("/therapist/homepage");
+
     }
   };
 

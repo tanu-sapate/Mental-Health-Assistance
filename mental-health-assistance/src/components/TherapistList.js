@@ -8,7 +8,9 @@ const therapists = [
     specialization: 'Clinical Psychology',
     experience: 10,
     availability: 'Mon-Fri, 9am-5pm',
-    image: ''
+
+    image: "https://cdn-icons-png.flaticon.com/512/3063/3063015.png"
+
   },
   {
     id: 2,
@@ -16,7 +18,9 @@ const therapists = [
     specialization: 'Cognitive Behavioral Therapy',
     experience: 8,
     availability: 'Tue-Sat, 10am-6pm',
-    image: ''
+
+    image: "https://cdn-icons-png.flaticon.com/512/3063/3063015.png"
+
   },
   {
     id: 3,
@@ -24,13 +28,17 @@ const therapists = [
     specialization: 'Human Behaviour',
     experience: 12,
     availability: 'Mon-Thu, 8am-4pm',
-    image: ''
+
+    image: "https://cdn-icons-png.flaticon.com/512/3063/3063015.png"
+
   }
 ];
 
 const TherapistList = () => {
   return (
-    <Container className="therapist-list">
+
+    <Container className="therapist-list mt-5">
+
       <h2 className="text-center mb-4">Available Therapists</h2>
       <Row>
         {therapists.map(therapist => (
@@ -38,7 +46,9 @@ const TherapistList = () => {
             <Card>
               <Card.Img 
                 variant="top" 
-                src={`https://source.unsplash.com/random/300x200?therapy,psychologist,${therapist.id}`}
+
+                src={`${therapist.image}`}
+
                 alt={therapist.name}
               />
               <Card.Body>

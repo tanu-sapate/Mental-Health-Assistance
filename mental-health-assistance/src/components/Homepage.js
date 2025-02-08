@@ -1,8 +1,16 @@
 import React from 'react';
 import { Container, Row, Col, Card, Button, Carousel } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import '../styles/Homepage.css';
 
 const Homepage = () => {
+
+  const navigate = useNavigate();
+
+  const handleJoinForum = (forumId) => {
+    navigate(`/chat/${forumId}`);
+  };
+
   return (
     <Container fluid>
       {/* Hero Section */}
@@ -75,24 +83,31 @@ const Homepage = () => {
       <section className="community-forums py-5 bg-light mt-3">
         <Container>
           <h2 className="text-center">Community Forums</h2>
-          <p className="text-center">
-            Join interactive discussions on topics like insecurities, self-help, and more.
-          </p>
+          <p className="text-center">Join discussions on mental health topics.</p>
           <Row className="justify-content-center">
-            {['Insecurities', 'Self-Help', 'Meditation', 'Self-Confidence'].map((topic, index) => (
-              <Col md={3} key={index} className="forum-box mx-2 my-2">
+            {[
+              { id: 1, title: 'Mental Health Tips', desc: 'Get practical tips and strategies for maintaining mental wellness.' },
+              { id: 2, title: 'Anxiety Support', desc: 'Share your experiences and find support from others dealing with anxiety.' },
+              { id: 3, title: 'Motivational Stories', desc: 'Read and share inspiring stories of resilience and growth.' },
+              { id: 4, title: 'Insecurities', desc: 'Discuss and overcome personal insecurities with a supportive community.' },
+              { id: 5, title: 'Self-Help', desc: 'Explore self-help techniques to improve mental well-being.' },
+              { id: 6, title: 'Meditation', desc: 'Learn about meditation techniques and their benefits for mental health.' },
+              { id: 7, title: 'Self-Confidence', desc: 'Find ways to build self-confidence and self-esteem.' },
+            ].map((forum) => (
+              <Col md={3} key={forum.id} className="forum-box mx-2 my-2">
                 <div className="message-box">
-                  <p>
-                    <strong>{topic}</strong>: Let's talk and support each other!
-                  </p>
-                  <Button variant="outline-primary" size="sm">Join</Button>
+                  <p><strong>{forum.title}</strong></p>
+                  <p className="forum-desc">{forum.desc}</p>
+                  <Button variant="outline-primary" size="sm" onClick={() => handleJoinForum(forum.id)}>
+                    Join
+                  </Button>
                 </div>
               </Col>
             ))}
           </Row>
+          <h4 className="text-center mt-3"><u><i>To explore more forums, visit the community forums page.</i></u></h4>
         </Container>
       </section>
-
       {/* Resource Section */}
       <section className="resources-section">
         {/* Videos Section */}
