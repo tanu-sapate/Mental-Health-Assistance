@@ -10,11 +10,9 @@ const RegisterPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (role === "user") {
-      navigate("/Homepage");
+      navigate("/homepage");
     } else {
-
       navigate("/therapist/homepage");
-
     }
   };
 

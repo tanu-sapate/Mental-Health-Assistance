@@ -18,7 +18,8 @@ const Login = () => {
     // Temporary credentials
     const tempCredentials = {
       'user': { email: 'user@gmail.com', password: 'user123' },
-      'therapist': { email: 'therapist@gmail.com', password: 'therapist123' }
+      'therapist': { email: 'therapist@gmail.com', password: 'therapist123' },
+      'admin': { email: 'admin@gmail.com', password: 'admin123' }
     };
 
     try {
@@ -30,10 +31,12 @@ const Login = () => {
         navigate('/homepage');
       } else if (email === tempCredentials.therapist.email && password === tempCredentials.therapist.password) {
         localStorage.setItem('userType', 'therapist');
-
         navigate('/therapist/homepage');
-
-      } else {
+      } else if (email === tempCredentials.admin.email && password === tempCredentials.admin.password) {
+        localStorage.setItem('userType', 'admin');
+        navigate('/admin/AdminHomepage');
+      } 
+      else {
         throw new Error('Invalid credentials');
       }
     } catch (err) {

@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { Container, Form, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import TherapistNavbar from './TherapistNavbar';
 
 const TherapistProfile = () => {
   const navigate = useNavigate();
   const [profile, setProfile] = useState({
-    name: 'You me',
+    name: 'Therapist You me',
     email: 'you.me@user.com',
     specialization: 'Clinical Psychology',
     yearsOfExperience: 10,
@@ -29,8 +30,11 @@ const TherapistProfile = () => {
   };
 
   return (
+   
+    <>
+    <TherapistNavbar/>
     <Container className="therapist-profile">
-      <h2 className="text-center mb-4">My Profile</h2>
+      <h2 className="text-center mt-4 pt-5">My Profile</h2>
       
       {isEditing ? (
         <Form onSubmit={handleSubmit}>
@@ -126,6 +130,7 @@ const TherapistProfile = () => {
         </>
       )}
     </Container>
+    </>
   );
 };
 

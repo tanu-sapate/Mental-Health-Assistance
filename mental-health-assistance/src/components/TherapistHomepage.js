@@ -1,27 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import { Container, Button, Table, Modal, Form } from "react-bootstrap";
 import TherapistNavbar from "./TherapistNavbar";
+import { SessionContext } from "../context/SessionContext";
 import "./Homepage.css";
 
 const TherapistHomepage = () => {
-  const [sessionRequests, setSessionRequests] = useState([
-    {
-      id: 1,
-      patientName: "John Doe",
-      requestedDate: "2023-10-15",
-      description: "Anxiety management session"
-    },
-    {
-      id: 2,
-      patientName: "Jane Smith",
-      requestedDate: "2023-10-16",
-      description: "Stress coping strategies"
-    }
-  ]);
-
+  const { sessionRequests, scheduleSession } = useContext(SessionContext);
   const [selectedRequest, setSelectedRequest] = useState(null);
   const [showCreateModal, setShowCreateModal] = useState(false);
-  const [scheduledSessions, setScheduledSessions] = useState([]);
   const [newSession, setNewSession] = useState({
     title: "",
     date: "",
@@ -36,38 +22,44 @@ const TherapistHomepage = () => {
 
   const handleSessionSubmit = (e) => {
     e.preventDefault();
-    setScheduledSessions([...scheduledSessions, {
-      ...newSession,
-      patientName: selectedRequest.patientName
-    }]);
+    
+    // Create session object
+    const newScheduledSession = {
+      id: selectedRequest.id, // Use the same ID to track it
+      patientName: selectedRequest.patientName,
+      title: newSession.title,
+      date: newSession.date,
+      time: newSession.time,
+      description: newSession.description
+    };
+
+    // Schedule the session and remove from requests
+    scheduleSession(newScheduledSession);
+    
+    // Close modal and reset form
     setShowCreateModal(false);
-    setNewSession({
-      title: "",
-      date: "",
-      time: "",
-      description: ""
-    });
+    setNewSession({ title: "", date: "", time: "", description: "" });
   };
 
   return (
     <>
       <TherapistNavbar />
       <Container className="therapist-homepage">
-      
-        <h2 className="text-center mb-4">Session Requests</h2>
+      <h2 className="text-center mt-5 mb-4 pt-5">Session Requests</h2>
+
         
-        <div className="session-requests">
-          <Table striped bordered hover>
-            <thead>
-              <tr>
-                <th>Patient Name</th>
-                <th>Requested Date</th>
-                <th>Description</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {sessionRequests.map(request => (
+        <Table striped bordered hover>
+          <thead>
+            <tr>
+              <th>Patient Name</th>
+              <th>Requested Date</th>
+              <th>Description</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {sessionRequests.length > 0 ? (
+              sessionRequests.map(request => (
                 <tr key={request.id}>
                   <td>{request.patientName}</td>
                   <td>{request.requestedDate}</td>
@@ -81,40 +73,14 @@ const TherapistHomepage = () => {
                     </Button>
                   </td>
                 </tr>
-              ))}
-            </tbody>
-          </Table>
-        </div>
-
-        <div className="scheduled-sessions mt-5">
-          <h3>Scheduled Sessions</h3>
-          {scheduledSessions.length > 0 ? (
-            <Table striped bordered hover>
-              <thead>
-                <tr>
-                  <th>Patient Name</th>
-                  <th>Session Title</th>
-                  <th>Date</th>
-                  <th>Time</th>
-                  <th>Description</th>
-                </tr>
-              </thead>
-              <tbody>
-                {scheduledSessions.map((session, index) => (
-                  <tr key={index}>
-                    <td>{session.patientName}</td>
-                    <td>{session.title}</td>
-                    <td>{session.date}</td>
-                    <td>{session.time}</td>
-                    <td>{session.description}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </Table>
-          ) : (
-            <p>No sessions scheduled yet.</p>
-          )}
-        </div>
+              ))
+            ) : (
+              <tr>
+                <td colSpan="4" className="text-center">No session requests available.</td>
+              </tr>
+            )}
+          </tbody>
+        </Table>
 
         <Modal show={showCreateModal} onHide={() => setShowCreateModal(false)}>
           <Modal.Header closeButton>

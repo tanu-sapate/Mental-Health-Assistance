@@ -51,9 +51,7 @@ const Resources = () => {
                                 <h5 className="card-title">A 10 minute Guided Meditation for your Overactive Mind</h5>
                                 <p className="card-text">Listening to this 10-minute guided meditation can be a transformative experience for anyone struggling with an overactive mind.  </p>
                                 <div className="d-flex justify-content-end mr-3">
-
                                 <RazorpayButton/>
-
                                 </div>
                             </div>
                         </div>
@@ -65,9 +63,7 @@ const Resources = () => {
                                 <h5 className="card-title">4 Small Habits To Improve Self Esteem</h5>
                                 <p className="card-text">Self esteem is defined as the degree to which qualities and characteristics inside one’s self-concept are perceived to be positive. In short, it is your opinion of yourself.</p>
                                 <div className="d-flex justify-content-end mr-3">
-
                                 <RazorpayButton/>
-
                                 </div>
                             </div>
                         </div>
@@ -79,11 +75,9 @@ const Resources = () => {
                                 <h5 className="card-title">5 Ways to Deal with Anxiety</h5>
                                 <p className="card-text">Dr. Hansaji Yogendra explains how to deal with anxiety in 5 simple ways. Due to COVID-19, we have faced a lot of mental health issues in the society. This video will help you to deal with these issues.</p>
                                 <div className="d-flex justify-content-end mr-3">
-
                                 <div className="d-flex justify-content-end mr-3">
   <RazorpayButton/>
 </div>
-
                                 </div>
                             </div>
                         </div>
@@ -142,11 +136,9 @@ const Resources = () => {
                                    
                                         Encouraging employees to take regular breaks and mental health days is vital for maintaining a sustainable and productive work environment. 
                                         <div class="d-flex w-100 justify-content-between mt-3">
-
                                         <a href="https://www.youtube.com/watch?v=PBaFURjVrm0" className="btn btn-info disabled">Read Article</a>
                                         <div className="d-flex mr-3">
                                         <RazorpayButton/>
-
                                 </div>
                                         </div>
                                         <br />
@@ -163,11 +155,9 @@ const Resources = () => {
                                 <h5 className="card-title">Brain Eating Habits</h5>
                                 <p className="card-text">Developing healthy eating habits is essential for maintaining overall well-being. A balanced diet provides the necessary nutrients for your body to function optimally, supports mental health, and reduces the risk of chronic diseases.</p>
                                 <div class="d-flex w-100 justify-content-between mt-4">
-
                                         <a href="https://www.youtube.com/watch?v=PBaFURjVrm0" className="btn btn-info disabled">Read Article</a>
                                         <div className="d-flex mr-3">
                                         <RazorpayButton/>
-
                                 </div>
                                         </div>
                             </div>
@@ -181,11 +171,9 @@ const Resources = () => {
                                 <h5 className="card-title">Exercise and Mental Health</h5>
                                 <p className="card-text">Physical activity has a profound impact on mental health. Regular exercise releases endorphins, which are natural mood lifters. It also helps reduce stress, anxiety, and symptoms of depression, while improving self-esteem and cognitive function.</p>
                                 <div class="d-flex w-100 justify-content-between">
-
                                         <a href="https://www.youtube.com/watch?v=PBaFURjVrm0" className="btn btn-info disabled">Read Article</a>
                                         <div className="d-flex mr-3">
                                         <RazorpayButton/>
-
                                 </div>
                                         </div>
                             </div>
@@ -253,10 +241,8 @@ const Resources = () => {
                                     Your browser does not support the audio element.
                                 </audio>
                                 <div className="d-flex justify-content-between">
-
                                 <a href="https://example.com/podcast3" className="btn btn-primary mt-2 disabled">Listen to Podcast</a>
                                 <RazorpayButton/>
-
                                 </div>
                             </div>
                         </div>
@@ -271,10 +257,8 @@ const Resources = () => {
                                     Your browser does not support the audio element.
                                 </audio>
                                 <div className="d-flex justify-content-between">
-
                                 <a href="https://example.com/podcast3" className="btn btn-primary mt-2 disabled">Listen to Podcast</a>
                                 <RazorpayButton/>
-
                                 </div>
                             </div>
                         </div>
@@ -289,10 +273,8 @@ const Resources = () => {
                                     Your browser does not support the audio element.
                                 </audio>
                                 <div className="d-flex justify-content-between">
-
                                 <a href="https://example.com/podcast3" className="btn btn-primary mt-2 disabled">Listen to Podcast</a>
                                 <RazorpayButton/>
-
                                 </div>
                             </div>
                         </div>

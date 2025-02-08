@@ -65,6 +65,7 @@
 
 /* Therapist Navbar Styles */
 .therapist-navbar {
+    
     background-color: #f8f9fa;
     padding: 10px 0;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -164,4 +165,4 @@
 .therapist-list .card-text {
     flex-grow: 1;
 }
-
+  

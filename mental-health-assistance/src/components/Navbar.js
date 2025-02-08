@@ -1,42 +1,50 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Navbar, Nav, Container, Dropdown } from 'react-bootstrap';
-import { FaUserCircle, FaCalendarAlt } from 'react-icons/fa';
+import { FaUserCircle } from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const CustomNavbar = ({ userType }) => {
-  const location = useLocation();
+const CustomNavbar = () => {  // Removed userType since it's not needed
+  const location = useLocation(); // Get current route
   const [showDropdown, setShowDropdown] = useState(false);
+
+// const CustomNavbar = ({ userType }) => {
+//   const location = useLocation(); // Get current route location
+//   const [showDropdown, setShowDropdown] = useState(false);
 
   const handleToggle = (isOpen) => {
     setShowDropdown(isOpen);
   };
 
-  const navItems = userType === 'user' ? [
-
+  const navItems = [
     { name: 'Homepage', link: '/homepage' },
-
     { name: 'Community Forums', link: '/forums' },
     { name: 'Resources', link: '/resources' },
     { name: 'Therapists', link: '/therapists' },
     { name: 'Mood Tracker', link: '/mood-tracker' }
-  ] : [
-
-    { name: 'Homepage', link: '/therapist/homepage' },
-
-    { name: 'Community Forums', link: '/forums' },
-    { name: 'Patients', link: '/patients' },
-    { name: 'Reports', link: '/reports' },
-    { name: 'Profile', link: '/profile' }
   ];
+  
+  // const navItems = userType === 'user' ? [
+  //   { name: 'Homepage', link: '/Homepage' },
+  //   { name: 'Community Forums', link: '/forums' },
+  //   { name: 'Resources', link: '/resources' },
+  //   { name: 'Therapists', link: '/therapists' },
+  //   { name: 'Mood Tracker', link: '/mood-tracker' }
+  // ] 
+  // : [
+  //   { name: 'Homepage', link: '/therapist/homepage' },
+  //   { name: 'Community Forums', link: '/forums' },
+  //   { name: 'Patients', link: '/patients' },
+  //   { name: 'Reports', link: '/reports' },
+  //   { name: 'Profile', link: '/profile' }
+  // ]
+  // ;
 
   return (
-
     <Navbar expand="lg" className="fixed-top shadow-sm p-3 bg-white">
       <Container>
-        <Navbar.Brand as={Link} to="/" className="fw-bold text-primary">MindCare</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/homepage" className="fw-bold text-primary">MindCare</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbar-nav" />
-
 
         <Navbar.Collapse id="navbar-nav">
           <Nav className="ms-auto">
@@ -51,17 +59,10 @@ const CustomNavbar = ({ userType }) => {
               </Nav.Link>
             ))}
 
-            {/* Sessions Icon ONLY for Users */}
-            {userType === 'user' && (
-              <Nav.Link as={Link} to="/user-sessions" className="d-flex align-items-center mx-2">
-                <FaCalendarAlt size={24} className={`nav-item ${location.pathname === '/usersessions' ? 'active' : ''}`} style={{ cursor: 'pointer' }} title="Sessions" />
-              </Nav.Link>
-            )}
-
             {/* User Profile Dropdown */}
             <Dropdown show={showDropdown} onToggle={handleToggle} align="end">
               <Dropdown.Toggle as="span" onClick={() => setShowDropdown(!showDropdown)} className="nav-link d-flex align-items-center">
-                <FaUserCircle size={28} className="text-primary ms-3" style={{ cursor: 'pointer' }} title="Profile" />
+                <FaUserCircle size={28} className="text-primary ms-3" style={{ cursor: 'pointer' }} />
               </Dropdown.Toggle>
               <Dropdown.Menu className="shadow-sm rounded">
                 <Dropdown.Item as={Link} to="/profile">View Profile</Dropdown.Item>
@@ -77,7 +78,3 @@ const CustomNavbar = ({ userType }) => {
 };
 
 export default CustomNavbar;
-
-
-
-

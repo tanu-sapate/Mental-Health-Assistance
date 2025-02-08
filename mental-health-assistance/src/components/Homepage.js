@@ -12,7 +12,9 @@ const Homepage = () => {
   };
 
   return (
+    
     <Container fluid>
+      <navbar></navbar>
       {/* Hero Section */}
       <section className="hero-section text-center py-5">
         <h1>Welcome to Mental Health Assistance</h1>
