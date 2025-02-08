@@ -38,7 +38,7 @@ const Homepage = () => {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="https://via.placeholder.com/1200x400/2e8b57/ffffff?text=You+Are+Stronger+Than+You+Think"
+              src="https://jidnyasagurukulam.graphy.com/_next/image?url=https%3A%2F%2Fd502jbuhuh9wk.cloudfront.net%2Fcourses%2F66825bf7efd150059f969d77%2Fcover%2F2024-07-01T07%3A46%3A00.975Z.jpg&w=1920&q=75"
               alt="Third slide"
             />
             <Carousel.Caption>
@@ -106,7 +106,7 @@ const Homepage = () => {
               <Col md={6}>
                 <iframe
                   width="100%"
-                  height="315"
+                  height="280"
                   src="https://www.youtube.com/embed/dQw4w9WgXcQ"
                   title="Sample Video"
                   frameBorder="0"
@@ -146,27 +146,27 @@ const Homepage = () => {
             <Row className="align-items-center">
               <Col md={6}>
                 <h2>Articles</h2>
-                <p>Read an engaging article on self-confidence.</p>
+                <p>Mental peace refers to the deliberate state of spiritual calm and the potential of stressors such as the burden arising from pretending to perform at an optional level with a positive mind (inner peace). Peace of mind is generally associated with joy, happiness, calmness, prayer, yoga, meditation etc. many spiritual practices refer to this peace as an experience of knowing oneself. </p>
                 <Button variant="outline-primary">Read Article</Button>
               </Col>
               <Col md={6}>
-                <img src="sample-article-image.jpg" alt="Article" className="img-fluid rounded" />
+                <img src="https://media.istockphoto.com/id/1421170573/photo/aspiration-for-change.jpg?s=612x612&w=0&k=20&c=3edLSV2-XIxGB47g4FHLljigkXjYiqwDUyuGpT4lLv0=" height={100} width={400} alt="Article" className="img-fluid rounded ml-5" />
               </Col>
             </Row>
           </Container>
           </div>
           {/* Therapist Carousel */}
-      <section className="section-therapists pt-3">
+      <section className="section-therapists pt-5">
         <div className="container">
           <h2>Our Therapists</h2>
-          <div id="therapistCarousel" className="carousel slide mt-3" data-ride="carousel">
+          <div id="therapistCarousel" className="carousel slide mt-3 pt-3" data-ride="carousel">
             <div className="carousel-inner">
               <div className="carousel-item active">
                 <div className="row">
                   <div className="col-md-3">
                     <div className="card">
                       <img
-                        src="https://via.placeholder.com/150"
+                        src="https://cdn-icons-png.flaticon.com/512/3063/3063015.png"
                         className="card-img-top"
                         alt="Dr. Jane Doe"
                       />
@@ -179,7 +179,7 @@ const Homepage = () => {
                   <div className="col-md-3">
                     <div className="card">
                       <img
-                        src="https://via.placeholder.com/150"
+                        src="https://cdn-icons-png.flaticon.com/512/3063/3063015.png"
                         className="card-img-top"
                         alt="Dr. Jane Doe"
                       />
@@ -192,7 +192,7 @@ const Homepage = () => {
                   <div className="col-md-3">
                     <div className="card">
                       <img
-                        src="https://via.placeholder.com/150"
+                        src="https://cdn-icons-png.flaticon.com/512/3063/3063015.png"
                         className="card-img-top"
                         alt="Dr. John Smith"
                       />
@@ -205,7 +205,7 @@ const Homepage = () => {
                   <div className="col-md-3">
                     <div className="card">
                       <img
-                        src="https://via.placeholder.com/150"
+                        src="https://cdn-icons-png.flaticon.com/512/3063/3063015.png"
                         className="card-img-top"
                         alt="Dr. Emily Johnson"
                       />
@@ -223,7 +223,7 @@ const Homepage = () => {
                   <div className="col-md-3">
                     <div className="card">
                       <img
-                        src="https://via.placeholder.com/150"
+                        src="https://cdn-icons-png.flaticon.com/512/3063/3063015.png"
                         className="card-img-top"
                         alt="Dr. Michael Brown"
                       />
@@ -236,7 +236,7 @@ const Homepage = () => {
                   <div className="col-md-3">
                     <div className="card">
                       <img
-                        src="https://via.placeholder.com/150"
+                        src="https://cdn-icons-png.flaticon.com/512/3063/3063015.png"
                         className="card-img-top"
                         alt="Dr. Sarah Wilson"
                       />
@@ -249,7 +249,7 @@ const Homepage = () => {
                   <div className="col-md-3">
                     <div className="card">
                       <img
-                        src="https://via.placeholder.com/150"
+                        src="https://cdn-icons-png.flaticon.com/512/3063/3063015.png"
                         className="card-img-top"
                         alt="Dr. Sarah Wilson"
                       />
@@ -262,7 +262,7 @@ const Homepage = () => {
                   <div className="col-md-3">
                     <div className="card">
                       <img
-                        src="https://via.placeholder.com/150"
+                        src="https://cdn-icons-png.flaticon.com/512/3063/3063015.png"
                         className="card-img-top"
                         alt="Dr. Robert Lee"
                       />

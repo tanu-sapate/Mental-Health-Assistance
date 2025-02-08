@@ -4,13 +4,13 @@ import { FaUserCircle } from 'react-icons/fa';
 
 const Navbar = ({ userType }) => {
   const navItems = userType === 'user' ? [
-    { name: 'Homepage', link: '/' },
+    { name: 'Homepage', link: '/Homepage' },
     { name: 'Community Forums', link: '/forums' },
     { name: 'Resources', link: '/resources' },
-    { name: 'Therapists', link: '#' },
-    { name: 'Mood Tracker', link: '#' }
+    { name: 'Therapists', link: '/therapists' },
+    { name: 'Mood Tracker', link: '/mood-tracker' }
   ] : [
-    { name: 'Homepage', link: '/' },
+    { name: 'Homepage', link: '/Homepage' },
     { name: 'Community Forums', link: '/forums' },
     { name: 'Patients', link: '#' },
     { name: 'Reports', link: '#' },
@@ -19,7 +19,7 @@ const Navbar = ({ userType }) => {
 
   return (
     <nav className="navbar navbar-expand-lg navbar-custom">
-      <a className="navbar-brand pl-4" href="#">Mental Health Support</a>
+      <a className="navbar-brand pl-4" href="#">MindCare</a>
       <div className="collapse navbar-collapse">
         <ul className="navbar-nav ml-auto">
           {navItems.map((item, index) => (
@@ -28,7 +28,7 @@ const Navbar = ({ userType }) => {
             </li>
           ))}
           <li className="nav-item">
-            <Link className="nav-link" to="#profile">
+            <Link className="nav-link" to="/profile">
               <FaUserCircle size={24} />
             </Link>
           </li>
