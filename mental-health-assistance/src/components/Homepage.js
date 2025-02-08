@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Card, Button, Carousel } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Homepage.css';
@@ -7,6 +7,14 @@ import RazorpayButton from './RazorpayButton';
 const Homepage = () => {
 
   const navigate = useNavigate();
+
+  const [isSubscribed, setIsSubscribed] = useState(false);
+
+  // Simulate fetching subscription status (replace with actual API call if available)
+  useEffect(() => {
+    const userSubscriptionStatus = localStorage.getItem('isSubscribed'); // Fetch from storage or API
+    setIsSubscribed(userSubscriptionStatus === 'true'); // Convert string to boolean
+  }, []);
 
   const handleJoinForum = (forumId) => {
     navigate(`/chat/${forumId}`);
@@ -317,14 +325,16 @@ const Homepage = () => {
         
       </section>
       {/* Subscribe Section */} 
-      <section className="subscribe-section py-5 text-center bg-light">
-        <Container fluid style={{ backgroundColor: '#ffe4e1', padding: '30px' }}>
-          
-          <h3>Unlock Your Path to Wellness! 🌟 </h3>
-            <br/><p>Subscribe now to access exclusive resources, expert guidance, and a supportive community dedicated to your mental well-being.</p>
-          <RazorpayButton/>
-        </Container>
-      </section>
+      {!isSubscribed && (
+        <section className="subscribe-section py-5 text-center bg-light">
+          <Container fluid style={{ backgroundColor: '#ffe4e1', padding: '30px' }}>
+            <h3>Unlock Your Path to Wellness! 🌟 </h3>
+            <br />
+            <p>Subscribe now to access exclusive resources, expert guidance, and a supportive community dedicated to your mental well-being.</p>
+            <RazorpayButton />
+          </Container>
+        </section>
+      )}
     </Container>
   );
 };

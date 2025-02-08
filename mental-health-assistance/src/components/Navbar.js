@@ -1,16 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Navbar, Nav, Container, Dropdown } from 'react-bootstrap';
-import { FaUserCircle } from 'react-icons/fa';
+import { FaUserCircle, FaCalendarAlt } from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const CustomNavbar = () => {  // Removed userType since it's not needed
-  const location = useLocation(); // Get current route
+const CustomNavbar = () => {
+  const location = useLocation();
   const [showDropdown, setShowDropdown] = useState(false);
+  const [isSubscribed, setIsSubscribed] = useState(false);
 
-// const CustomNavbar = ({ userType }) => {
-//   const location = useLocation(); // Get current route location
-//   const [showDropdown, setShowDropdown] = useState(false);
+  // Check subscription status on component mount
+  useEffect(() => {
+    const subscriptionStatus = localStorage.getItem('isSubscribed') === 'true';
+    setIsSubscribed(subscriptionStatus);
+  }, []);
 
   const handleToggle = (isOpen) => {
     setShowDropdown(isOpen);
@@ -23,22 +26,6 @@ const CustomNavbar = () => {  // Removed userType since it's not needed
     { name: 'Therapists', link: '/therapists' },
     { name: 'Mood Tracker', link: '/mood-tracker' }
   ];
-  
-  // const navItems = userType === 'user' ? [
-  //   { name: 'Homepage', link: '/Homepage' },
-  //   { name: 'Community Forums', link: '/forums' },
-  //   { name: 'Resources', link: '/resources' },
-  //   { name: 'Therapists', link: '/therapists' },
-  //   { name: 'Mood Tracker', link: '/mood-tracker' }
-  // ] 
-  // : [
-  //   { name: 'Homepage', link: '/therapist/homepage' },
-  //   { name: 'Community Forums', link: '/forums' },
-  //   { name: 'Patients', link: '/patients' },
-  //   { name: 'Reports', link: '/reports' },
-  //   { name: 'Profile', link: '/profile' }
-  // ]
-  // ;
 
   return (
     <Navbar expand="lg" className="fixed-top shadow-sm p-3 bg-white">
@@ -58,6 +45,13 @@ const CustomNavbar = () => {  // Removed userType since it's not needed
                 {item.name}
               </Nav.Link>
             ))}
+
+            {/* Sessions Icon - Only visible for subscribed users */}
+            {isSubscribed && (
+              <Nav.Link as={Link} to="/user-sessions" className="d-flex align-items-center mx-2">
+                <FaCalendarAlt size={24} className={`nav-item ${location.pathname === '/user-sessions' ? 'active' : ''}`} style={{ cursor: 'pointer' }} title="Sessions" />
+              </Nav.Link>
+            )}
 
             {/* User Profile Dropdown */}
             <Dropdown show={showDropdown} onToggle={handleToggle} align="end">

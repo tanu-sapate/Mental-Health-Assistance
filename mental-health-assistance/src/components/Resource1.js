@@ -1,187 +1,121 @@
-import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import React, { useState, useEffect } from 'react';
+import RazorpayButton from './RazorpayButton';
+import axios from 'axios'; // We will use axios for making API calls
 
-const Resources1 = () => {
-  return (
-    <main className="container mt-5">
-      <div className="text-center">
-        <h1 className="display-4">Resources</h1>
-        <p className="lead">
-          <i>
-            "A curated collection of videos, articles, and podcasts to uplift
-            your spirit, nurture mindfulness, and strengthen your inner peace.
-            Whether you're seeking calm, positivity, or personal growth, these
-            resources are here to support and inspire you."
-          </i>
-        </p>
-      </div>
+const Resources = () => {
+    const [isSubscribed, setIsSubscribed] = useState(false); // Change this based on actual user subscription state
+    const [resources, setResources] = useState({
+        videos: [],
+        articles: [],
+        podcasts: [],
+    });
 
-      {/* Self Help Videos */}
-      <section className="mt-5">
-        <h2 className="text-center mb-4">Self-Help Videos</h2>
-        <div className="row">
-          {/* Video 1 */}
-          <div className="col-md-4">
-            <div className="card shadow-sm">
-              <iframe
-                width="100%"
-                height="200"
-                src="https://www.youtube.com/embed/bPz8B6i8ZlA"
-                title="How To Relieve Anxiety In One Minute"
-                frameBorder="0"
-                allowFullScreen
-              ></iframe>
-              <div className="card-body">
-                <h5 className="card-title">How To Relieve Anxiety In One Minute</h5>
-                <p className="card-text">A simple exercise to help you reduce anxiety quickly.</p>
-              </div>
-            </div>
-          </div>
+    // Fetch resources from the backend when the component mounts
+    useEffect(() => {
+        const fetchResources = async () => {
+            try {
+                const response = await axios.get('/api/resources'); // Assume we have an endpoint for resources
+                setResources(response.data);
+            } catch (error) {
+                console.error("Error fetching resources:", error);
+            }
+        };
 
-          {/* Video 2 */}
-          <div className="col-md-4">
-            <div className="card shadow-sm">
-              <iframe
-                width="100%"
-                height="200"
-                src="https://www.youtube.com/embed/7l1aMNj3OCo"
-                title="How To Deal With Depression?"
-                frameBorder="0"
-                allowFullScreen
-              ></iframe>
-              <div className="card-body">
-                <h5 className="card-title">How To Deal With Depression?</h5>
-                <p className="card-text">
-                  Learn strategies to cope with depression through mindfulness and self-care.
+        fetchResources();
+    }, []); // Empty dependency array means this runs once when the component mounts
+
+    return (
+        <main className="container mt-5">
+            <div className="text-center">
+                <h1>Resources</h1>
+                <p> 
+                    <i>"Here, you'll find a thoughtfully curated collection of videos, articles, and podcasts designed to uplift your spirit, nurture mindfulness, and strengthen your inner peace. Whether you're seeking a moment of calm, a dose of positivity, or tools for personal growth, these resources are here to support and inspire you on your journey to well-being. Dive in and discover your sanctuary of calm and empowerment."</i>
                 </p>
-              </div>
             </div>
-          </div>
 
-          {/* Paid Video  */}
-          <div className="col-md-4">
-            <div className="card shadow-sm">
-              <iframe
-                width="100%"
-                height="200"
-                src=""
-                title="Paid Content"
-                frameBorder="0"
-                allow="autoplay; encrypted-media"
-                allowFullScreen
-                style={{ backgroundColor: "#f8f9fa" }}
-              ></iframe>
-              <div className="card-body">
-                <h5 className="card-title">10-Minute Guided Meditation</h5>
-                <p className="card-text">
-                  A relaxing guided meditation to calm your overactive mind.
-                </p>
-                <button className="btn btn-danger w-100" disabled>
-                  Pay to Unlock
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+            <section className="mt-5 section-videos">
+                <h1 className="text-center mt-4 mb-4">Self Help Videos</h1>
+                <div className="row">
+                    {resources.videos.map(video => (
+                        <div className="col-md-4" key={video.id}>
+                            <div className="card">
+                                {!isSubscribed ? (
+                                    <div className="video-placeholder d-flex justify-content-center align-items-center" style={{ height: "200px", background: "#ddd" }}>
+                                        <p className="text-center">Subscribe to watch</p>
+                                    </div>
+                                ) : (
+                                    <iframe width="100%" height="200" src={video.url} title={video.title} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                                )}
+                                <div className="card-body">
+                                    <h5 className="card-title">{video.title}</h5>
+                                    <p className="card-text">{video.description}</p>
+                                    {isSubscribed && (
+                                        <div className="d-flex justify-content-end mr-3">
+                                            <RazorpayButton />
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </section>
 
-      {/* Articles */}
-      <section className="mt-5">
-        <h2 className="text-center mb-4">Articles</h2>
-        <div className="row">
-          <div className="col-md-4">
-            <div className="card shadow-sm">
-              <div className="card-body">
-                <h5 className="card-title">Importance of Mental Health Breaks</h5>
-                <p className="card-text">
-                  Taking breaks is crucial for mental well-being. Read how short breaks improve productivity.
-                </p>
-                <a
-                  href="https://www.psychologytoday.com/us/blog/stronger-the-broken-places/201805/the-importance-taking-breaks"
-                  className="btn btn-info w-100"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Read Article
-                </a>
-              </div>
-            </div>
-          </div>
+            <section className="mt-5 section-articles">
+                <h1 className="text-center mt-4 mb-4">Articles</h1>
+                <div className="row">
+                    {resources.articles.map(article => (
+                        <div className="col-md-4" key={article.id}>
+                            <div className="card">
+                                <div className="card-body">
+                                    <h5 className="card-title">{article.title}</h5>
+                                    <p className="card-text">{article.description}</p>
+                                    <a href={article.url} className="btn btn-info mt-3" target="_blank" rel="noopener noreferrer">
+                                        Read Article
+                                    </a>
+                                    {isSubscribed && (
+                                        <div className="d-flex justify-content-between mt-3">
+                                            <a href={article.url} className={`btn btn-info mt-3 ${!isSubscribed ? "disabled" : ""}`}>Read Article</a>
+                                            {!isSubscribed && <RazorpayButton />}
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </section>
 
-          <div className="col-md-4">
-            <div className="card shadow-sm">
-              <div className="card-body">
-                <h5 className="card-title">Brain-Boosting Foods</h5>
-                <p className="card-text">
-                  Discover the best foods that enhance cognitive function and mental clarity.
-                </p>
-                <a
-                  href="https://www.healthline.com/nutrition/11-brain-foods"
-                  className="btn btn-info w-100"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Read Article
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {/* Paid Article */}
-          <div className="col-md-4">
-            <div className="card shadow-sm">
-              <div className="card-body">
-                <h5 className="card-title">Exclusive: The Science of Meditation</h5>
-                <p className="card-text">A deep dive into how meditation changes the brain.</p>
-                <button className="btn btn-danger w-100" disabled>
-                  Pay to Unlock
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Podcasts */}
-      <section className="mt-5">
-        <h2 className="text-center mb-4">Podcasts</h2>
-        <div className="row">
-          <div className="col-md-4">
-            <div className="card shadow-sm p-3">
-              <h5 className="text-center">Mental Health Matters</h5>
-              <p>A podcast discussing various mental health topics and strategies.</p>
-              <audio controls className="w-100">
-                <source src="https://www.sample-videos.com/audio/mp3/wave.mp3" type="audio/mpeg" />
-                Your browser does not support the audio element.
-              </audio>
-            </div>
-          </div>
-
-          <div className="col-md-4">
-            <div className="card shadow-sm p-3">
-              <h5 className="text-center">Mindful Living</h5>
-              <p>Explore mindfulness practices for a peaceful life.</p>
-              <audio controls className="w-100">
-                <source src="https://www.sample-videos.com/audio/mp3/crowd-cheering.mp3" type="audio/mpeg" />
-                Your browser does not support the audio element.
-              </audio>
-            </div>
-          </div>
-
-          {/* Paid Podcast */}
-          <div className="col-md-4">
-            <div className="card shadow-sm p-3">
-              <h5 className="text-center">Exclusive: Resilience & Growth</h5>
-              <p>Stories and strategies for building resilience and personal growth.</p>
-              <button className="btn btn-danger w-100" disabled>
-                Pay to Unlock
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-  );
+            <section className="mt-5 section-podcasts">
+                <h1 className="text-center mt-4 mb-4">Podcasts</h1>
+                <div className="row">
+                    {resources.podcasts.map(podcast => (
+                        <div className="col-md-4" key={podcast.id}>
+                            <div className="card m-3">
+                                <div className="card-body">
+                                    <h5 className="card-title text-center">{podcast.title}</h5>
+                                    <p className="card-text">{podcast.description}</p>
+                                    <audio controls>
+                                        <source src={podcast.url} type="audio/mpeg" />
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                    <div className="d-flex justify-content-center">
+                                        <a href={podcast.url} className="btn btn-primary mt-2" target="_blank" rel="noopener noreferrer">Listen to Podcast</a>
+                                    </div>
+                                    {!isSubscribed && (
+                                        <div className="d-flex justify-content-between mt-3">
+                                            <a href={podcast.url} className={`btn btn-primary mt-2 ${!isSubscribed ? "disabled" : ""}`}>Listen to Podcast</a>
+                                            {!isSubscribed && <RazorpayButton />}
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </section>
+        </main>
+    );
 };
 
-export default Resources1;
+export default Resources;

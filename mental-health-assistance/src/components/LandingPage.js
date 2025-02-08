@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Button, Row, Col } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import "./LandingPage.css";
+import "../styles/LandingPage.css";
 import Articlephoto from "../images/articles.jpg";
 import moodphoto from "../images/moodtrack.jpeg";
 import therapyphoto from "../images/therapysession.jpeg";

@@ -7,6 +7,14 @@ const UserSessions = () => {
   const [preferredTime, setPreferredTime] = useState('');
   const [showToast, setShowToast] = useState(false);
 
+  // Simulated appointment data
+  const appointment = {
+    doctorName: "Dr. John Doe",
+    scheduledDate: "March 10, 2025",
+    scheduledTime: "3:00 PM",
+    status: "Scheduled", // Change to "Pending" to simulate an unconfirmed appointment
+  };
+
   // Open and Close Modal Handlers
   const handleShow = () => setShowModal(true);
   const handleClose = () => setShowModal(false);
@@ -18,25 +26,36 @@ const UserSessions = () => {
     setShowToast(true); // Show success notification
   };
 
+  // Get today's date in YYYY-MM-DD format (to disable past dates in the calendar)
+  const today = new Date().toISOString().split("T")[0];
+
   return (
     <Container className="mt-4 main-content">
-      <h2 className="mb-4">Your Upcoming Appointment</h2>
+      <h2 className="mb-4 text-primary">Your Upcoming Appointment</h2>
       <Table striped bordered hover className="shadow-sm">
-        <thead className="table-info">
+        <thead className="table-info text-center">
           <tr>
             <th>Doctor's Name</th>
             <th>Scheduled Date</th>
             <th>Scheduled Time</th>
+            <th>Status</th>
             <th>Action</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="text-center">
           <tr>
-            <td>Dr. John Doe</td>
-            <td>March 10, 2025</td>
-            <td>3:00 PM</td>
+            <td>{appointment.doctorName}</td>
+            <td>{appointment.status === "Scheduled" ? appointment.scheduledDate : "-"}</td>
+            <td>{appointment.status === "Scheduled" ? appointment.scheduledTime : "-"}</td>
             <td>
-              <Button variant="warning" onClick={handleShow}>Request Edit</Button>
+              <span className={`badge ${appointment.status === "Scheduled" ? "bg-success" : "bg-warning text-dark"}`}>
+                {appointment.status}
+              </span>
+            </td>
+            <td>
+              <Button variant="warning" onClick={handleShow} disabled={appointment.status === "Pending"}>
+                Request Edit
+              </Button>
             </td>
           </tr>
         </tbody>
@@ -51,7 +70,11 @@ const UserSessions = () => {
           <Form>
             <Form.Group className="mb-3">
               <Form.Label>Preferred Date</Form.Label>
-              <Form.Control type="date" onChange={(e) => setPreferredDate(e.target.value)} />
+              <Form.Control 
+                type="date" 
+                min={today} // Disables past dates
+                onChange={(e) => setPreferredDate(e.target.value)} 
+              />
             </Form.Group>
             <Form.Group className="mb-3">
               <Form.Label>Preferred Time</Form.Label>
@@ -61,7 +84,9 @@ const UserSessions = () => {
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>Cancel</Button>
-          <Button variant="primary" onClick={handleSendRequest}>Send Request</Button>
+          <Button variant="primary" onClick={handleSendRequest} disabled={!preferredDate || !preferredTime}>
+            Send Request
+          </Button>
         </Modal.Footer>
       </Modal>
 

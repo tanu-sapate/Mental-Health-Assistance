@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FaThumbsUp } from 'react-icons/fa';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Container, Button, Card } from 'react-bootstrap';
-import '../components/ForumPage.css';
+import '../styles/ForumPage.css';
 
 const ForumPage = () => {
   const navigate = useNavigate();
